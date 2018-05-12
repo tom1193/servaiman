@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package servaiman_proto;
+
+service  Servaiman{
+    rpc PostMeta(Meta) returns (Status) {}
+    rpc PostCn(stream TwoDMatrix) returns (Status) {}
+    rpc PostAb(stream TwoDMatrix) returns (Status) {}
+    rpc PostCf(stream TwoDMatrix) returns (Status) {}
+    
+    rpc GetMeta(Request) returns (Meta) {}
+    rpc GetCn(Request) returns (stream TwoDMatrix) {}
+    rpc GetAb(Request) returns (stream TwoDMatrix) {}
+    rpc GetCf(Request) returns (stream TwoDMatrix) {}
+}
+
+message Status {
+    bool success = 1;
+}
+
+message Request {
+    uint32 size = 1;
+}
+
+message TwoDMatrix {
+    uint32 rows = 1;
+    repeated double data = 2 [packed=true];
+}
+
+message Meta {
+    repeated uint32 dims = 1;
+    uint32 gnb = 2;
+}
