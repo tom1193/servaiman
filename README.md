@@ -11,9 +11,10 @@ As OnACID runs, it generates outputs that are posted to the Servaiman service th
 ### Interface
 
 We define a method for each major data type in CaIman's output:
+
 Method | Caller | Description
------- | ------------ | -----------
-PostMeta| CaImAn | Post meta data
+------ | ------ | -----------
+PostMeta | CaImAn | Post meta data
 PostCn| CaImAn | Post background image
 PostAb| CaImAn | Post a matrix encoding *A* and *b*, spatial data of components and background signal respectively.
 PostCf| CaImAn | Post a matrix encoding *C* and *f*, temporal activity of components and background signal respectively.
